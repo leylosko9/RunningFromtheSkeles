@@ -126,7 +126,7 @@ function TitleScreen () {
     game.showLongText("GOOD LUCK!", DialogLayout.Bottom)
 }
 sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Player, function (sprite, otherSprite) {
-    game.over(false, effects.hearts)
+    game.over(false, effects.confetti)
 })
 function CreateEnemy () {
     enemysprite = sprites.create(img`
@@ -154,7 +154,7 @@ function CreateEnemy () {
     true
     )
     tiles.placeOnRandomTile(enemysprite, sprites.dungeon.collectibleInsignia)
-    enemysprite.follow(mySprite, 50)
+    enemysprite.follow(mySprite, 75)
 }
 let enemysprite: Sprite = null
 let mySprite: Sprite = null
