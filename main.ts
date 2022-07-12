@@ -149,12 +149,12 @@ function CreateEnemy () {
         `, SpriteKind.Enemy)
     animation.runImageAnimation(
     enemysprite,
-    assets.animation`myAnim0`,
+    assets.animation`real`,
     200,
     true
     )
     tiles.placeOnRandomTile(enemysprite, sprites.dungeon.collectibleInsignia)
-    enemysprite.follow(mySprite)
+    enemysprite.follow(mySprite, 50)
 }
 let enemysprite: Sprite = null
 let mySprite: Sprite = null
@@ -179,7 +179,7 @@ mySprite = sprites.create(img`
 animation.runImageAnimation(
 mySprite,
 assets.animation`myAnim`,
-200,
+500,
 true
 )
 tiles.setCurrentTilemap(tilemap`level1`)
@@ -190,6 +190,6 @@ game.onUpdate(function () {
     controller.moveSprite(mySprite, 200, 200)
     scene.cameraFollowSprite(mySprite)
 })
-game.onUpdateInterval(8000, function () {
+game.onUpdateInterval(6500, function () {
     CreateEnemy()
 })
